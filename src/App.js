@@ -11,7 +11,7 @@ function App() {
   const processData = dataString => {
     const dataStringLines = dataString.split(/\r\n|\n/);
     const headers = dataStringLines[0].split(/,(?![^"]*"(?:(?:[^"]*"){2})*[^"]*$)/);
-    
+
     const list = [];
     for (let i = 1; i < dataStringLines.length; i++) {
       const row = dataStringLines[i].split(/,(?![^"]*"(?:(?:[^"]*"){2})*[^"]*$)/);
@@ -36,7 +36,7 @@ function App() {
         }
       }
     }
-    
+
     // prepare columns list from headers
     const columns = headers.map(c => ({
       name: c,
